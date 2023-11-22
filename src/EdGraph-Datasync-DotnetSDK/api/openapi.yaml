@@ -1,0 +1,4122 @@
+openapi: 3.0.1
+info:
+  description: DataSync Api - v1.0
+  title: DataSync Api
+  version: v1.0
+servers:
+- url: https://api.edgraph.dev/tenant
+security:
+- oauth2:
+  - https://api.edgraph.com/tenant
+paths:
+  /tenants/{tenantId}/datasync/connections/{connectionId}/edfi/districts:
+    get:
+      operationId: GetTenantDataSyncConnectionEdFiDistricts
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/EdGraph.Platform.HttpAggregators.Tenant.Api.Controllers.v1.ViewModels.Responses.ConnectionEdFiResponse'
+                type: array
+          description: List of districts returned
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync connection not found
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve your districts right now
+      summary: Retrieves a list of districts from an Ed-Fi API using the DataSync
+        connection metadata
+      tags:
+      - Connections / Ed-Fi
+  /tenants/{tenantId}/datasync/connections/{connectionId}/edfi/educationorganizationidentificationsystemdescriptors:
+    get:
+      operationId: GetTenantDataSyncConnectionEdFiEducationOrganizationIdDescriptors
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/EdGraph.Platform.HttpAggregators.Tenant.Api.Controllers.v1.ViewModels.Responses.ConnectionEdFiResponse'
+                type: array
+          description: List of student identification system descriptors returned
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync connection not found
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve your student identification system descriptors
+            right now
+      summary: Retrieves a list of education organization identification system descriptors
+        from an Ed-Fi API using the DataSync connection metadata
+      tags:
+      - Connections / Ed-Fi
+  /tenants/{tenantId}/datasync/connections/{connectionId}/edfi/schoolyears:
+    get:
+      operationId: GetTenantDataSyncConnectionEdFiSchoolYears
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/EdGraph.Platform.HttpAggregators.Tenant.Api.Controllers.v1.ViewModels.Responses.ConnectionEdFiResponse'
+                type: array
+          description: List of school years returned
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync connection not found
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve your school years right now
+      summary: Retrieves a list of school years from an Ed-Fi API using the DataSync
+        connection metadata
+      tags:
+      - Connections / Ed-Fi
+  /tenants/{tenantId}/datasync/connections/{connectionId}/edfi/staffidentificationsystemdescriptors:
+    get:
+      operationId: GetTenantDataSyncConnectionEdFiStaffIdDescriptors
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/EdGraph.Platform.HttpAggregators.Tenant.Api.Controllers.v1.ViewModels.Responses.ConnectionEdFiResponse'
+                type: array
+          description: List of student identification system descriptors returned
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync connection not found
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve your student identification system descriptors
+            right now
+      summary: Retrieves a list of staff identification system descriptors from an
+        Ed-Fi API using the DataSync connection metadata
+      tags:
+      - Connections / Ed-Fi
+  /tenants/{tenantId}/datasync/connections/{connectionId}/edfi/studentidentificationsystemdescriptors:
+    get:
+      operationId: GetTenantDataSyncConnectionEdFiStudentIdDescriptors
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/EdGraph.Platform.HttpAggregators.Tenant.Api.Controllers.v1.ViewModels.Responses.ConnectionEdFiResponse'
+                type: array
+          description: List of student identification system descriptors returned
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync connection not found
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve your student identification system descriptors
+            right now
+      summary: Retrieves a list of student identification system descriptors from
+        an Ed-Fi API using the DataSync connection metadata
+      tags:
+      - Connections / Ed-Fi
+  /tenants/{tenantId}/datasync/connections/{connectionId}/edfi/termdescriptors:
+    get:
+      operationId: GetTenantDataSyncConnectionEdFiTermDescriptors
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/EdGraph.Platform.HttpAggregators.Tenant.Api.Controllers.v1.ViewModels.Responses.ConnectionEdFiResponse'
+                type: array
+          description: List of term descriptors returned
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync connection not found
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve your term descriptors right now
+      summary: Retrieves a list of term descriptors from an Ed-Fi API using the DataSync
+        connection metadata
+      tags:
+      - Connections / Ed-Fi
+  /tenants/{tenantId}/datasync/connections/{connectionId}/delete:
+    post:
+      operationId: DeleteTenantDataSyncConnection
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Connection.V1.DeleteConnectionRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Connection.V1.DeleteConnectionRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Connection.V1.DeleteConnectionRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Connection.V1.DeleteConnectionRequest'
+        description: ""
+      responses:
+        "202":
+          description: DataSync connection deleted
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync connection has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't delete your DataSync connection right now
+      summary: Delete a DataSync connection matching the primary key
+      tags:
+      - Connections
+  /tenants/{tenantId}/datasync/connections/{connectionId}/update:
+    post:
+      operationId: UpdateTenantDataSyncConnection
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Connection.V1.UpdateConnectionRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Connection.V1.UpdateConnectionRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Connection.V1.UpdateConnectionRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Connection.V1.UpdateConnectionRequest'
+        description: ""
+      responses:
+        "202":
+          description: DataSync connection updated
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync connection has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't update your DataSync connection right now
+      summary: Updates a DataSync connection matching the primary key
+      tags:
+      - Connections
+  /tenants/{tenantId}/datasync/connections/{connectionId}:
+    get:
+      operationId: GetTenantDataSyncConnectionProfileById
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DataSyncApi.Connection.V1.ConnectionProfileResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSyncApi.Connection.V1.ConnectionProfileResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DataSyncApi.Connection.V1.ConnectionProfileResponse'
+          description: DataSync connection returned
+        "404":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync connection not found
+        "400":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve your DataSync connection right now
+      summary: Retrieves a specific DataSync connection using its primary key
+      tags:
+      - Connections
+  /tenants/{tenantId}/datasync/connections/create:
+    post:
+      operationId: CreateTenantDataSyncConnection
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Connection.V1.CreateConnectionRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Connection.V1.CreateConnectionRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Connection.V1.CreateConnectionRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Connection.V1.CreateConnectionRequest'
+        description: ""
+      responses:
+        "202":
+          description: DataSync connection created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync connection has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't create your DataSync connection right now
+      summary: Creates a new DataSync connection
+      tags:
+      - Connections
+  /tenants/{tenantId}/datasync/connections:
+    get:
+      operationId: GetAllTenantDataSyncConnections
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: pageIndex
+        required: false
+        schema:
+          default: 0
+          format: int32
+          type: integer
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: orderBy
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSyncApi.Connection.V1.ConnectionListResponsePaginatedItemsViewModel'
+          description: List of DataSync connections returned
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve the list of DataSync connections right
+            now
+      summary: Retrieves a list of DataSync Connections
+      tags:
+      - Connections
+  /tenants/{tenantId}/datasync/jobs/{jobId}/executions/{jobExecutionId}/logs:
+    get:
+      operationId: GetAllTenantDataSyncJobExecutionLogs
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: jobId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: jobExecutionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: pageIndex
+        required: false
+        schema:
+          default: 0
+          format: int32
+          type: integer
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: orderBy
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: search
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSyncApi.JobExecutionLog.V1.JobExecutionLogEntryPaginatedItemsViewModel'
+          description: List of DataSync job execution logs returned
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve the list of DataSync job execution logs
+            right now
+      summary: Retrieves a list of DataSync Job Execution Logs
+      tags:
+      - Job Execution Logs
+  /tenants/{tenantId}/datasync/jobs/{jobId}/executions:
+    get:
+      operationId: GetAllTenantDataSyncJobExecutions
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: jobId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: pageIndex
+        required: false
+        schema:
+          default: 0
+          format: int32
+          type: integer
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: orderBy
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSyncApi.JobExecution.V1.JobExecutionListResponsePaginatedItemsViewModel'
+          description: List of DataSync job executions returned
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve the list of DataSync job executions right
+            now
+      summary: Retrieves a list of DataSync Job Executions
+      tags:
+      - Job Executions
+  /tenants/{tenantId}/datasync/jobtypes/{jobTypeId}:
+    get:
+      operationId: GetTenantDataSyncJobTypeProfileById
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: jobTypeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSyncApi.JobType.V1.JobTypeProfileResponse'
+          description: DataSync job type returned
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync job type not found
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve your DataSync job type right now
+      summary: Retrieves a specific DataSync job type using its primary key
+      tags:
+      - Job Types
+  /tenants/{tenantId}/datasync/jobtypes:
+    get:
+      operationId: GetAllTenantDataSyncJobTypes
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: pageIndex
+        required: false
+        schema:
+          default: 0
+          format: int32
+          type: integer
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: orderBy
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSyncApi.JobType.V1.JobTypeListResponsePaginatedItemsViewModel'
+          description: List of DataSync job types returned
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve the list of DataSync job types right now
+      summary: Retrieves a list of DataSync job types
+      tags:
+      - Job Types
+  /tenants/{tenantId}/datasync/jobs/{jobId}/activate:
+    post:
+      operationId: ActivateTenantDataSyncJob
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: jobId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.ActivateJobRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.ActivateJobRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.ActivateJobRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.ActivateJobRequest'
+        description: ""
+      responses:
+        "202":
+          description: DataSync job activated
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync job has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't activate your DataSync job right now
+      summary: Activate a DataSync job matching the primary key
+      tags:
+      - Jobs
+  /tenants/{tenantId}/datasync/jobs/{jobId}/cancel:
+    post:
+      operationId: CancelTenantDataSyncJob
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: jobId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.CancelJobRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.CancelJobRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.CancelJobRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.CancelJobRequest'
+        description: ""
+      responses:
+        "202":
+          description: DataSync job cancellation requested
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync job cancellation request has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't cancel your DataSync job right now
+      summary: Cancel a DataSync job matching the primary key
+      tags:
+      - Jobs
+  /tenants/{tenantId}/datasync/jobs/{jobId}/deactivate:
+    post:
+      operationId: DeactivateTenantDataSyncJob
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: jobId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.DeactivateJobRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.DeactivateJobRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.DeactivateJobRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.DeactivateJobRequest'
+        description: ""
+      responses:
+        "202":
+          description: DataSync job deactivated
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync job has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't deactivate your DataSync job right now
+      summary: Deactivate a DataSync job matching the primary key
+      tags:
+      - Jobs
+  /tenants/{tenantId}/datasync/jobs/{jobId}/delete:
+    post:
+      operationId: DeleteTenantDataSyncJob
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: jobId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.DeleteJobRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.DeleteJobRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.DeleteJobRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.DeleteJobRequest'
+        description: ""
+      responses:
+        "202":
+          description: DataSync job deleted
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync job has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't delete your DataSync job right now
+      summary: Delete a DataSync job matching the primary key
+      tags:
+      - Jobs
+  /tenants/{tenantId}/datasync/jobs/{jobId}/execute:
+    post:
+      operationId: ExecuteTenantDataSyncJob
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: jobId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.ExecuteJobRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.ExecuteJobRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.ExecuteJobRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.ExecuteJobRequest'
+        description: ""
+      responses:
+        "202":
+          description: DataSync job execution requested
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync job execution request has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't execute your DataSync job right now
+      summary: Execute a DataSync job matching the primary key
+      tags:
+      - Jobs
+  /tenants/{tenantId}/datasync/jobs/{jobId}/update:
+    post:
+      operationId: UpdateTenantDataSyncJob
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: jobId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.UpdateJobRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.UpdateJobRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.UpdateJobRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.UpdateJobRequest'
+        description: ""
+      responses:
+        "202":
+          description: DataSync job updated
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync job has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't update your DataSync job right now
+      summary: Updates a DataSync job matching the primary key
+      tags:
+      - Jobs
+  /tenants/{tenantId}/datasync/jobs/{jobId}:
+    get:
+      operationId: GetTenantDataSyncJobProfileById
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: jobId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSyncApi.Job.V1.JobProfileResponse'
+          description: DataSync job returned
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync job not found
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve your DataSync job right now
+      summary: Retrieves a specific DataSync job using its primary key
+      tags:
+      - Jobs
+  /tenants/{tenantId}/datasync/jobs/create:
+    post:
+      operationId: CreateTenantDataSyncJob
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.CreateJobRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.CreateJobRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.CreateJobRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DataSyncApi.Job.V1.CreateJobRequest'
+        description: ""
+      responses:
+        "202":
+          description: DataSync job created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync job has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't create your DataSync job right now
+      summary: Creates a new DataSync job
+      tags:
+      - Jobs
+  /tenants/{tenantId}/datasync/jobs:
+    get:
+      operationId: GetAllTenantDataSyncJobs
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: pageIndex
+        required: false
+        schema:
+          default: 0
+          format: int32
+          type: integer
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: orderBy
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSyncApi.Job.V1.JobListResponsePaginatedItemsViewModel'
+          description: List of DataSync jobs returned
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve the list of DataSync jobs right now
+      summary: Retrieves a list of DataSync Jobs
+      tags:
+      - Jobs
+  /tenants/{tenantId}/datasync/providers/{providerId}:
+    get:
+      operationId: GetTenantDataSyncProviderProfileById
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: providerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSyncApi.Provider.V1.ProviderProfileResponse'
+          description: DataSync provider returned
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: DataSync provider not found
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve your DataSync provider right now
+      summary: Retrieves a specific DataSync provider using its primary key
+      tags:
+      - Providers
+  /tenants/{tenantId}/datasync/providers:
+    get:
+      operationId: GetAllTenantDataSyncProviders
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: tenantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ""
+        explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: pageIndex
+        required: false
+        schema:
+          default: 0
+          format: int32
+          type: integer
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: orderBy
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: ""
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: api-version
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: X-version
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSyncApi.Provider.V1.ProviderListResponsePaginatedItemsViewModel'
+          description: List of DataSync providers returned
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Tenant has missing/invalid values
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+          description: Missing the required permissions to access to this tenant/resource
+        "500":
+          description: Oops! Can't retrieve the list of DataSync providers right now
+      summary: Retrieves a list of DataSync providers
+      tags:
+      - Providers
+components:
+  schemas:
+    DataSyncApi.Connection.V1.ConnectionListResponse:
+      additionalProperties: false
+      example:
+        lastModifiedDateTime: lastModifiedDateTime
+        connectionTypeName: connectionTypeName
+        createdBy: createdBy
+        providerId: providerId
+        lastModifiedBy: lastModifiedBy
+        tenantId: tenantId
+        name: name
+        connectionId: connectionId
+        createdDateTime: createdDateTime
+        connectionTypeId: connectionTypeId
+        providerName: providerName
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        connectionId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        providerId:
+          nullable: true
+          type: string
+        providerName:
+          nullable: true
+          type: string
+        connectionTypeId:
+          nullable: true
+          type: string
+        connectionTypeName:
+          nullable: true
+          type: string
+        createdBy:
+          nullable: true
+          type: string
+        createdDateTime:
+          nullable: true
+          type: string
+        lastModifiedBy:
+          nullable: true
+          type: string
+        lastModifiedDateTime:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Connection.V1.ConnectionListResponsePaginatedItemsViewModel:
+      additionalProperties: false
+      example:
+        data:
+        - lastModifiedDateTime: lastModifiedDateTime
+          connectionTypeName: connectionTypeName
+          createdBy: createdBy
+          providerId: providerId
+          lastModifiedBy: lastModifiedBy
+          tenantId: tenantId
+          name: name
+          connectionId: connectionId
+          createdDateTime: createdDateTime
+          connectionTypeId: connectionTypeId
+          providerName: providerName
+        - lastModifiedDateTime: lastModifiedDateTime
+          connectionTypeName: connectionTypeName
+          createdBy: createdBy
+          providerId: providerId
+          lastModifiedBy: lastModifiedBy
+          tenantId: tenantId
+          name: name
+          connectionId: connectionId
+          createdDateTime: createdDateTime
+          connectionTypeId: connectionTypeId
+          providerName: providerName
+        pageIndex: 0
+        count: 1
+        pageSize: 6
+      properties:
+        pageIndex:
+          format: int32
+          type: integer
+        pageSize:
+          format: int32
+          type: integer
+        count:
+          format: int64
+          type: integer
+        data:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Connection.V1.ConnectionListResponse'
+          nullable: true
+          type: array
+      type: object
+    DataSyncApi.Connection.V1.ConnectionMetadata:
+      additionalProperties: false
+      example:
+        isSecret: true
+        code: code
+        value: value
+      properties:
+        code:
+          nullable: true
+          type: string
+        value:
+          nullable: true
+          type: string
+        isSecret:
+          type: boolean
+      type: object
+    DataSyncApi.Connection.V1.ConnectionProfileResponse:
+      additionalProperties: false
+      example:
+        lastModifiedDateTime: lastModifiedDateTime
+        connectionTypeName: connectionTypeName
+        createdBy: createdBy
+        providerId: providerId
+        lastModifiedBy: lastModifiedBy
+        tenantId: tenantId
+        name: name
+        connectionId: connectionId
+        createdDateTime: createdDateTime
+        connectionTypeId: connectionTypeId
+        connectionMetadata:
+        - isSecret: true
+          code: code
+          value: value
+        - isSecret: true
+          code: code
+          value: value
+        providerName: providerName
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        connectionId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        connectionMetadata:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Connection.V1.ConnectionMetadata'
+          nullable: true
+          readOnly: true
+          type: array
+        providerId:
+          nullable: true
+          type: string
+        providerName:
+          nullable: true
+          type: string
+        connectionTypeId:
+          nullable: true
+          type: string
+        connectionTypeName:
+          nullable: true
+          type: string
+        createdBy:
+          nullable: true
+          type: string
+        createdDateTime:
+          nullable: true
+          type: string
+        lastModifiedBy:
+          nullable: true
+          type: string
+        lastModifiedDateTime:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Connection.V1.CreateConnectionRequest:
+      additionalProperties: false
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        connectionId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        connectionMetadata:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Connection.V1.ConnectionMetadata'
+          nullable: true
+          readOnly: true
+          type: array
+        providerId:
+          nullable: true
+          type: string
+        connectionTypeId:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Connection.V1.DeleteConnectionRequest:
+      additionalProperties: false
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        connectionId:
+          nullable: true
+          type: string
+        reason:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Connection.V1.UpdateConnectionRequest:
+      additionalProperties: false
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        connectionId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        connectionMetadata:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Connection.V1.ConnectionMetadata'
+          nullable: true
+          readOnly: true
+          type: array
+        providerId:
+          nullable: true
+          type: string
+        connectionTypeId:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Job.V1.ActivateJobRequest:
+      additionalProperties: false
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        jobId:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Job.V1.CancelJobRequest:
+      additionalProperties: false
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        jobId:
+          nullable: true
+          type: string
+        childJobId:
+          nullable: true
+          type: string
+        jobExecutionId:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Job.V1.ChildJob:
+      additionalProperties: false
+      example:
+        jobId: jobId
+        jobExecutionId: jobExecutionId
+        childJobId: childJobId
+        jobExecutionStatus: null
+        jobExecutionStartDateTime: jobExecutionStartDateTime
+        metrics:
+        - processed: 5
+          success: 5
+          entity: entity
+          errors: 2
+        - processed: 5
+          success: 5
+          entity: entity
+          errors: 2
+        childJobName: childJobName
+        jobExecutionEndDateTime: jobExecutionEndDateTime
+      properties:
+        jobId:
+          nullable: true
+          type: string
+        jobExecutionId:
+          nullable: true
+          type: string
+        childJobId:
+          nullable: true
+          type: string
+        childJobName:
+          nullable: true
+          type: string
+        jobExecutionStatus:
+          $ref: '#/components/schemas/DataSyncApi.Job.V1.JobExecutionStatus'
+        jobExecutionStartDateTime:
+          nullable: true
+          type: string
+        jobExecutionEndDateTime:
+          nullable: true
+          type: string
+        metrics:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Job.V1.Metric'
+          nullable: true
+          readOnly: true
+          type: array
+      type: object
+    DataSyncApi.Job.V1.CreateJobRequest:
+      additionalProperties: false
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        jobId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        jobTypeId:
+          nullable: true
+          type: string
+        sourceConnectionId:
+          nullable: true
+          type: string
+        destinationConnectionId:
+          nullable: true
+          type: string
+        profileId:
+          nullable: true
+          type: string
+        jobPoints:
+          format: int32
+          type: integer
+        applicationId:
+          nullable: true
+          type: string
+        dataRefreshType:
+          $ref: '#/components/schemas/DataSyncApi.Job.V1.DataRefreshType'
+        dataRefreshSpecificDate:
+          nullable: true
+          type: string
+        maxApiFailure:
+          format: int32
+          type: integer
+        maxApiRetry:
+          format: int32
+          type: integer
+        jobCompleteCallbackUrl:
+          nullable: true
+          type: string
+        jobMetadata:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Job.V1.JobMetadata'
+          nullable: true
+          readOnly: true
+          type: array
+        schedule:
+          $ref: '#/components/schemas/DataSyncApi.Job.V1.Schedule'
+        notificationEmails:
+          items:
+            type: string
+          nullable: true
+          readOnly: true
+          type: array
+      type: object
+    DataSyncApi.Job.V1.DataRefreshType:
+      enum:
+      - Unknown
+      - Full
+      - Deltasincelastjobexecution
+      - Deltasincespecificdatetime
+      type: string
+    DataSyncApi.Job.V1.DeactivateJobRequest:
+      additionalProperties: false
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        jobId:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Job.V1.DeleteJobRequest:
+      additionalProperties: false
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        jobId:
+          nullable: true
+          type: string
+        reason:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Job.V1.ExecuteJobRequest:
+      additionalProperties: false
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        jobId:
+          nullable: true
+          type: string
+        childJobId:
+          nullable: true
+          type: string
+        dataRefreshType:
+          $ref: '#/components/schemas/DataSyncApi.Job.V1.DataRefreshType'
+        dataRefreshSpecificDate:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Job.V1.JobExecutionStatus:
+      enum:
+      - Unknown
+      - Queued
+      - Running
+      - Completed
+      - CompletedWithErrors
+      - Cancelled
+      - Error
+      - QueuedForCancel
+      type: string
+    DataSyncApi.Job.V1.JobListResponse:
+      additionalProperties: false
+      example:
+        jobStatus: null
+        lastModifiedDateTime: lastModifiedDateTime
+        jobExecutionId: jobExecutionId
+        sourceConnectionId: sourceConnectionId
+        jobTypeName: jobTypeName
+        lastModifiedBy: lastModifiedBy
+        jobExecutionStatus: null
+        createdDateTime: createdDateTime
+        jobId: jobId
+        destinationConnectionId: destinationConnectionId
+        schedule:
+          cron: cron
+          beginDate: beginDate
+          endDate: endDate
+          timeZone: timeZone
+          enabled: true
+        createdBy: createdBy
+        profileId: profileId
+        tenantId: tenantId
+        name: name
+        jobExecutionStartDateTime: jobExecutionStartDateTime
+        metrics:
+        - processed: 5
+          success: 5
+          entity: entity
+          errors: 2
+        - processed: 5
+          success: 5
+          entity: entity
+          errors: 2
+        applicationId: applicationId
+        jobTypeId: jobTypeId
+        childJobs:
+        - jobId: jobId
+          jobExecutionId: jobExecutionId
+          childJobId: childJobId
+          jobExecutionStatus: null
+          jobExecutionStartDateTime: jobExecutionStartDateTime
+          metrics:
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          childJobName: childJobName
+          jobExecutionEndDateTime: jobExecutionEndDateTime
+        - jobId: jobId
+          jobExecutionId: jobExecutionId
+          childJobId: childJobId
+          jobExecutionStatus: null
+          jobExecutionStartDateTime: jobExecutionStartDateTime
+          metrics:
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          childJobName: childJobName
+          jobExecutionEndDateTime: jobExecutionEndDateTime
+        jobExecutionEndDateTime: jobExecutionEndDateTime
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        jobId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        jobTypeId:
+          nullable: true
+          type: string
+        jobTypeName:
+          nullable: true
+          type: string
+        sourceConnectionId:
+          nullable: true
+          type: string
+        destinationConnectionId:
+          nullable: true
+          type: string
+        profileId:
+          nullable: true
+          type: string
+        applicationId:
+          nullable: true
+          type: string
+        schedule:
+          $ref: '#/components/schemas/DataSyncApi.Job.V1.Schedule'
+        jobStatus:
+          $ref: '#/components/schemas/DataSyncApi.Job.V1.JobStatus'
+        jobExecutionId:
+          nullable: true
+          type: string
+        jobExecutionStatus:
+          $ref: '#/components/schemas/DataSyncApi.Job.V1.JobExecutionStatus'
+        jobExecutionStartDateTime:
+          nullable: true
+          type: string
+        jobExecutionEndDateTime:
+          nullable: true
+          type: string
+        metrics:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Job.V1.Metric'
+          nullable: true
+          readOnly: true
+          type: array
+        childJobs:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Job.V1.ChildJob'
+          nullable: true
+          readOnly: true
+          type: array
+        createdBy:
+          nullable: true
+          type: string
+        createdDateTime:
+          nullable: true
+          type: string
+        lastModifiedBy:
+          nullable: true
+          type: string
+        lastModifiedDateTime:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Job.V1.JobListResponsePaginatedItemsViewModel:
+      additionalProperties: false
+      example:
+        data:
+        - jobStatus: null
+          lastModifiedDateTime: lastModifiedDateTime
+          jobExecutionId: jobExecutionId
+          sourceConnectionId: sourceConnectionId
+          jobTypeName: jobTypeName
+          lastModifiedBy: lastModifiedBy
+          jobExecutionStatus: null
+          createdDateTime: createdDateTime
+          jobId: jobId
+          destinationConnectionId: destinationConnectionId
+          schedule:
+            cron: cron
+            beginDate: beginDate
+            endDate: endDate
+            timeZone: timeZone
+            enabled: true
+          createdBy: createdBy
+          profileId: profileId
+          tenantId: tenantId
+          name: name
+          jobExecutionStartDateTime: jobExecutionStartDateTime
+          metrics:
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          applicationId: applicationId
+          jobTypeId: jobTypeId
+          childJobs:
+          - jobId: jobId
+            jobExecutionId: jobExecutionId
+            childJobId: childJobId
+            jobExecutionStatus: null
+            jobExecutionStartDateTime: jobExecutionStartDateTime
+            metrics:
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            childJobName: childJobName
+            jobExecutionEndDateTime: jobExecutionEndDateTime
+          - jobId: jobId
+            jobExecutionId: jobExecutionId
+            childJobId: childJobId
+            jobExecutionStatus: null
+            jobExecutionStartDateTime: jobExecutionStartDateTime
+            metrics:
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            childJobName: childJobName
+            jobExecutionEndDateTime: jobExecutionEndDateTime
+          jobExecutionEndDateTime: jobExecutionEndDateTime
+        - jobStatus: null
+          lastModifiedDateTime: lastModifiedDateTime
+          jobExecutionId: jobExecutionId
+          sourceConnectionId: sourceConnectionId
+          jobTypeName: jobTypeName
+          lastModifiedBy: lastModifiedBy
+          jobExecutionStatus: null
+          createdDateTime: createdDateTime
+          jobId: jobId
+          destinationConnectionId: destinationConnectionId
+          schedule:
+            cron: cron
+            beginDate: beginDate
+            endDate: endDate
+            timeZone: timeZone
+            enabled: true
+          createdBy: createdBy
+          profileId: profileId
+          tenantId: tenantId
+          name: name
+          jobExecutionStartDateTime: jobExecutionStartDateTime
+          metrics:
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          applicationId: applicationId
+          jobTypeId: jobTypeId
+          childJobs:
+          - jobId: jobId
+            jobExecutionId: jobExecutionId
+            childJobId: childJobId
+            jobExecutionStatus: null
+            jobExecutionStartDateTime: jobExecutionStartDateTime
+            metrics:
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            childJobName: childJobName
+            jobExecutionEndDateTime: jobExecutionEndDateTime
+          - jobId: jobId
+            jobExecutionId: jobExecutionId
+            childJobId: childJobId
+            jobExecutionStatus: null
+            jobExecutionStartDateTime: jobExecutionStartDateTime
+            metrics:
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            childJobName: childJobName
+            jobExecutionEndDateTime: jobExecutionEndDateTime
+          jobExecutionEndDateTime: jobExecutionEndDateTime
+        pageIndex: 0
+        count: 1
+        pageSize: 6
+      properties:
+        pageIndex:
+          format: int32
+          type: integer
+        pageSize:
+          format: int32
+          type: integer
+        count:
+          format: int64
+          type: integer
+        data:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Job.V1.JobListResponse'
+          nullable: true
+          type: array
+      type: object
+    DataSyncApi.Job.V1.JobMetadata:
+      additionalProperties: false
+      example:
+        code: code
+        value: value
+      properties:
+        code:
+          nullable: true
+          type: string
+        value:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Job.V1.JobProfileResponse:
+      additionalProperties: false
+      example:
+        profileName: profileName
+        jobStatus: null
+        lastModifiedDateTime: lastModifiedDateTime
+        jobTypeName: jobTypeName
+        jobMetadata:
+        - code: code
+          value: value
+        - code: code
+          value: value
+        createdDateTime: createdDateTime
+        dataRefreshType: null
+        destinationConnectionId: destinationConnectionId
+        jobExecutionStartDateTime: jobExecutionStartDateTime
+        notificationEmails:
+        - notificationEmails
+        - notificationEmails
+        jobTypeId: jobTypeId
+        childJobs:
+        - jobId: jobId
+          jobExecutionId: jobExecutionId
+          childJobId: childJobId
+          jobExecutionStatus: null
+          jobExecutionStartDateTime: jobExecutionStartDateTime
+          metrics:
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          childJobName: childJobName
+          jobExecutionEndDateTime: jobExecutionEndDateTime
+        - jobId: jobId
+          jobExecutionId: jobExecutionId
+          childJobId: childJobId
+          jobExecutionStatus: null
+          jobExecutionStartDateTime: jobExecutionStartDateTime
+          metrics:
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          childJobName: childJobName
+          jobExecutionEndDateTime: jobExecutionEndDateTime
+        jobExecutionEndDateTime: jobExecutionEndDateTime
+        jobExecutionId: jobExecutionId
+        sourceConnectionId: sourceConnectionId
+        maxApiFailure: 6
+        lastModifiedBy: lastModifiedBy
+        jobExecutionStatus: null
+        jobPoints: 0
+        jobId: jobId
+        schedule:
+          cron: cron
+          beginDate: beginDate
+          endDate: endDate
+          timeZone: timeZone
+          enabled: true
+        createdBy: createdBy
+        profileId: profileId
+        jobCompleteCallbackUrl: jobCompleteCallbackUrl
+        tenantId: tenantId
+        name: name
+        metrics:
+        - processed: 5
+          success: 5
+          entity: entity
+          errors: 2
+        - processed: 5
+          success: 5
+          entity: entity
+          errors: 2
+        applicationId: applicationId
+        dataRefreshSpecificDate: dataRefreshSpecificDate
+        maxApiRetry: 1
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        jobId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        jobTypeId:
+          nullable: true
+          type: string
+        jobTypeName:
+          nullable: true
+          type: string
+        sourceConnectionId:
+          nullable: true
+          type: string
+        destinationConnectionId:
+          nullable: true
+          type: string
+        profileId:
+          nullable: true
+          type: string
+        profileName:
+          nullable: true
+          type: string
+        applicationId:
+          nullable: true
+          type: string
+        jobPoints:
+          format: int32
+          type: integer
+        dataRefreshType:
+          $ref: '#/components/schemas/DataSyncApi.Job.V1.DataRefreshType'
+        dataRefreshSpecificDate:
+          nullable: true
+          type: string
+        maxApiFailure:
+          format: int32
+          type: integer
+        maxApiRetry:
+          format: int32
+          type: integer
+        jobCompleteCallbackUrl:
+          nullable: true
+          type: string
+        jobMetadata:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Job.V1.JobMetadata'
+          nullable: true
+          readOnly: true
+          type: array
+        schedule:
+          $ref: '#/components/schemas/DataSyncApi.Job.V1.Schedule'
+        notificationEmails:
+          items:
+            type: string
+          nullable: true
+          readOnly: true
+          type: array
+        jobStatus:
+          $ref: '#/components/schemas/DataSyncApi.Job.V1.JobStatus'
+        jobExecutionId:
+          nullable: true
+          type: string
+        jobExecutionStatus:
+          $ref: '#/components/schemas/DataSyncApi.Job.V1.JobExecutionStatus'
+        jobExecutionStartDateTime:
+          nullable: true
+          type: string
+        jobExecutionEndDateTime:
+          nullable: true
+          type: string
+        metrics:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Job.V1.Metric'
+          nullable: true
+          readOnly: true
+          type: array
+        childJobs:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Job.V1.ChildJob'
+          nullable: true
+          readOnly: true
+          type: array
+        createdBy:
+          nullable: true
+          type: string
+        createdDateTime:
+          nullable: true
+          type: string
+        lastModifiedBy:
+          nullable: true
+          type: string
+        lastModifiedDateTime:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Job.V1.JobStatus:
+      enum:
+      - Unknown
+      - Active
+      - Deactivated
+      - QueuedForDelete
+      - QueuedForScheduleRestart
+      type: string
+    DataSyncApi.Job.V1.Metric:
+      additionalProperties: false
+      example:
+        processed: 5
+        success: 5
+        entity: entity
+        errors: 2
+      properties:
+        entity:
+          nullable: true
+          type: string
+        processed:
+          format: int32
+          type: integer
+        success:
+          format: int32
+          type: integer
+        errors:
+          format: int32
+          type: integer
+      type: object
+    DataSyncApi.Job.V1.Schedule:
+      additionalProperties: false
+      example:
+        cron: cron
+        beginDate: beginDate
+        endDate: endDate
+        timeZone: timeZone
+        enabled: true
+      properties:
+        enabled:
+          type: boolean
+        beginDate:
+          nullable: true
+          type: string
+        endDate:
+          nullable: true
+          type: string
+        cron:
+          nullable: true
+          type: string
+        timeZone:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Job.V1.UpdateJobRequest:
+      additionalProperties: false
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        jobId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        sourceConnectionId:
+          nullable: true
+          type: string
+        destinationConnectionId:
+          nullable: true
+          type: string
+        profileId:
+          nullable: true
+          type: string
+        jobPoints:
+          format: int32
+          type: integer
+        applicationId:
+          nullable: true
+          type: string
+        dataRefreshType:
+          $ref: '#/components/schemas/DataSyncApi.Job.V1.DataRefreshType'
+        dataRefreshSpecificDate:
+          nullable: true
+          type: string
+        maxApiFailure:
+          format: int32
+          type: integer
+        maxApiRetry:
+          format: int32
+          type: integer
+        jobCompleteCallbackUrl:
+          nullable: true
+          type: string
+        jobMetadata:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Job.V1.JobMetadata'
+          nullable: true
+          readOnly: true
+          type: array
+        schedule:
+          $ref: '#/components/schemas/DataSyncApi.Job.V1.Schedule'
+        notificationEmails:
+          items:
+            type: string
+          nullable: true
+          readOnly: true
+          type: array
+      type: object
+    DataSyncApi.JobExecution.V1.ChildJob:
+      additionalProperties: false
+      example:
+        jobId: jobId
+        jobExecutionId: jobExecutionId
+        childJobId: childJobId
+        jobExecutionStatus: null
+        jobExecutionStartDateTime: jobExecutionStartDateTime
+        metrics:
+        - processed: 5
+          success: 5
+          entity: entity
+          errors: 2
+        - processed: 5
+          success: 5
+          entity: entity
+          errors: 2
+        childJobName: childJobName
+        jobExecutionEndDateTime: jobExecutionEndDateTime
+      properties:
+        jobId:
+          nullable: true
+          type: string
+        jobExecutionId:
+          nullable: true
+          type: string
+        childJobId:
+          nullable: true
+          type: string
+        childJobName:
+          nullable: true
+          type: string
+        jobExecutionStatus:
+          $ref: '#/components/schemas/DataSyncApi.JobExecution.V1.JobExecutionStatus'
+        jobExecutionStartDateTime:
+          nullable: true
+          type: string
+        jobExecutionEndDateTime:
+          nullable: true
+          type: string
+        metrics:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.JobExecution.V1.Metric'
+          nullable: true
+          readOnly: true
+          type: array
+      type: object
+    DataSyncApi.JobExecution.V1.JobExecutionListResponse:
+      additionalProperties: false
+      example:
+        jobId: jobId
+        jobExecutionId: jobExecutionId
+        tenantId: tenantId
+        jobExecutionStatus: null
+        jobExecutionStartDateTime: jobExecutionStartDateTime
+        metrics:
+        - processed: 5
+          success: 5
+          entity: entity
+          errors: 2
+        - processed: 5
+          success: 5
+          entity: entity
+          errors: 2
+        applicationId: applicationId
+        childJobs:
+        - jobId: jobId
+          jobExecutionId: jobExecutionId
+          childJobId: childJobId
+          jobExecutionStatus: null
+          jobExecutionStartDateTime: jobExecutionStartDateTime
+          metrics:
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          childJobName: childJobName
+          jobExecutionEndDateTime: jobExecutionEndDateTime
+        - jobId: jobId
+          jobExecutionId: jobExecutionId
+          childJobId: childJobId
+          jobExecutionStatus: null
+          jobExecutionStartDateTime: jobExecutionStartDateTime
+          metrics:
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          childJobName: childJobName
+          jobExecutionEndDateTime: jobExecutionEndDateTime
+        jobExecutionEndDateTime: jobExecutionEndDateTime
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        jobId:
+          nullable: true
+          type: string
+        applicationId:
+          nullable: true
+          type: string
+        jobExecutionId:
+          nullable: true
+          type: string
+        jobExecutionStatus:
+          $ref: '#/components/schemas/DataSyncApi.JobExecution.V1.JobExecutionStatus'
+        jobExecutionStartDateTime:
+          nullable: true
+          type: string
+        jobExecutionEndDateTime:
+          nullable: true
+          type: string
+        childJobs:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.JobExecution.V1.ChildJob'
+          nullable: true
+          readOnly: true
+          type: array
+        metrics:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.JobExecution.V1.Metric'
+          nullable: true
+          readOnly: true
+          type: array
+      type: object
+    DataSyncApi.JobExecution.V1.JobExecutionListResponsePaginatedItemsViewModel:
+      additionalProperties: false
+      example:
+        data:
+        - jobId: jobId
+          jobExecutionId: jobExecutionId
+          tenantId: tenantId
+          jobExecutionStatus: null
+          jobExecutionStartDateTime: jobExecutionStartDateTime
+          metrics:
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          applicationId: applicationId
+          childJobs:
+          - jobId: jobId
+            jobExecutionId: jobExecutionId
+            childJobId: childJobId
+            jobExecutionStatus: null
+            jobExecutionStartDateTime: jobExecutionStartDateTime
+            metrics:
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            childJobName: childJobName
+            jobExecutionEndDateTime: jobExecutionEndDateTime
+          - jobId: jobId
+            jobExecutionId: jobExecutionId
+            childJobId: childJobId
+            jobExecutionStatus: null
+            jobExecutionStartDateTime: jobExecutionStartDateTime
+            metrics:
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            childJobName: childJobName
+            jobExecutionEndDateTime: jobExecutionEndDateTime
+          jobExecutionEndDateTime: jobExecutionEndDateTime
+        - jobId: jobId
+          jobExecutionId: jobExecutionId
+          tenantId: tenantId
+          jobExecutionStatus: null
+          jobExecutionStartDateTime: jobExecutionStartDateTime
+          metrics:
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          - processed: 5
+            success: 5
+            entity: entity
+            errors: 2
+          applicationId: applicationId
+          childJobs:
+          - jobId: jobId
+            jobExecutionId: jobExecutionId
+            childJobId: childJobId
+            jobExecutionStatus: null
+            jobExecutionStartDateTime: jobExecutionStartDateTime
+            metrics:
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            childJobName: childJobName
+            jobExecutionEndDateTime: jobExecutionEndDateTime
+          - jobId: jobId
+            jobExecutionId: jobExecutionId
+            childJobId: childJobId
+            jobExecutionStatus: null
+            jobExecutionStartDateTime: jobExecutionStartDateTime
+            metrics:
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            - processed: 5
+              success: 5
+              entity: entity
+              errors: 2
+            childJobName: childJobName
+            jobExecutionEndDateTime: jobExecutionEndDateTime
+          jobExecutionEndDateTime: jobExecutionEndDateTime
+        pageIndex: 0
+        count: 1
+        pageSize: 6
+      properties:
+        pageIndex:
+          format: int32
+          type: integer
+        pageSize:
+          format: int32
+          type: integer
+        count:
+          format: int64
+          type: integer
+        data:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.JobExecution.V1.JobExecutionListResponse'
+          nullable: true
+          type: array
+      type: object
+    DataSyncApi.JobExecution.V1.JobExecutionStatus:
+      enum:
+      - Unknown
+      - Queued
+      - Running
+      - Completed
+      - CompletedWithErrors
+      - Cancelled
+      - Error
+      type: string
+    DataSyncApi.JobExecution.V1.Metric:
+      additionalProperties: false
+      example:
+        processed: 5
+        success: 5
+        entity: entity
+        errors: 2
+      properties:
+        entity:
+          nullable: true
+          type: string
+        processed:
+          format: int32
+          type: integer
+        success:
+          format: int32
+          type: integer
+        errors:
+          format: int32
+          type: integer
+      type: object
+    DataSyncApi.JobExecutionLog.V1.JobExecutionLogEntry:
+      additionalProperties: false
+      example:
+        jobId: jobId
+        jobExecutionId: jobExecutionId
+        messageType: null
+        loggedDateTime: loggedDateTime
+        tenantId: tenantId
+        errorCode: errorCode
+        message: message
+      properties:
+        tenantId:
+          nullable: true
+          type: string
+        jobId:
+          nullable: true
+          type: string
+        jobExecutionId:
+          nullable: true
+          type: string
+        message:
+          nullable: true
+          type: string
+        messageType:
+          $ref: '#/components/schemas/DataSyncApi.JobExecutionLog.V1.MessageType'
+        loggedDateTime:
+          nullable: true
+          type: string
+        errorCode:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.JobExecutionLog.V1.JobExecutionLogEntryPaginatedItemsViewModel:
+      additionalProperties: false
+      example:
+        data:
+        - jobId: jobId
+          jobExecutionId: jobExecutionId
+          messageType: null
+          loggedDateTime: loggedDateTime
+          tenantId: tenantId
+          errorCode: errorCode
+          message: message
+        - jobId: jobId
+          jobExecutionId: jobExecutionId
+          messageType: null
+          loggedDateTime: loggedDateTime
+          tenantId: tenantId
+          errorCode: errorCode
+          message: message
+        pageIndex: 0
+        count: 1
+        pageSize: 6
+      properties:
+        pageIndex:
+          format: int32
+          type: integer
+        pageSize:
+          format: int32
+          type: integer
+        count:
+          format: int64
+          type: integer
+        data:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.JobExecutionLog.V1.JobExecutionLogEntry'
+          nullable: true
+          type: array
+      type: object
+    DataSyncApi.JobExecutionLog.V1.MessageType:
+      enum:
+      - Information
+      - Warning
+      - SyncError
+      - FatalError
+      type: string
+    DataSyncApi.JobType.V1.JobMetadataField:
+      additionalProperties: false
+      example:
+        isSecret: true
+        code: code
+        tab: tab
+        defaultValue: defaultValue
+        display: true
+        values: values
+        label: label
+        api: api
+        type: type
+        validation: validation
+        order: order
+      properties:
+        tab:
+          nullable: true
+          type: string
+        code:
+          nullable: true
+          type: string
+        label:
+          nullable: true
+          type: string
+        validation:
+          nullable: true
+          type: string
+        order:
+          nullable: true
+          type: string
+        display:
+          type: boolean
+        defaultValue:
+          nullable: true
+          type: string
+        type:
+          nullable: true
+          type: string
+        values:
+          nullable: true
+          type: string
+        api:
+          nullable: true
+          type: string
+        isSecret:
+          type: boolean
+      type: object
+    DataSyncApi.JobType.V1.JobTypeListResponse:
+      additionalProperties: false
+      example:
+        lastModifiedDateTime: lastModifiedDateTime
+        sourceConnectionRequired: true
+        createdBy: createdBy
+        sourceConnectionTypeId: sourceConnectionTypeId
+        destinationConnectionTypeId: destinationConnectionTypeId
+        destinationConnectionRequired: true
+        lastModifiedBy: lastModifiedBy
+        name: name
+        profiles:
+        - actorType: actorType
+          profileId: profileId
+          name: name
+          description: description
+          jobTypeId: jobTypeId
+        - actorType: actorType
+          profileId: profileId
+          name: name
+          description: description
+          jobTypeId: jobTypeId
+        createdDateTime: createdDateTime
+        jobTypeId: jobTypeId
+      properties:
+        jobTypeId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        sourceConnectionTypeId:
+          nullable: true
+          type: string
+        destinationConnectionTypeId:
+          nullable: true
+          type: string
+        sourceConnectionRequired:
+          type: boolean
+        destinationConnectionRequired:
+          type: boolean
+        profiles:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.JobType.V1.Profile'
+          nullable: true
+          readOnly: true
+          type: array
+        createdBy:
+          nullable: true
+          type: string
+        createdDateTime:
+          nullable: true
+          type: string
+        lastModifiedBy:
+          nullable: true
+          type: string
+        lastModifiedDateTime:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.JobType.V1.JobTypeListResponsePaginatedItemsViewModel:
+      additionalProperties: false
+      example:
+        data:
+        - lastModifiedDateTime: lastModifiedDateTime
+          sourceConnectionRequired: true
+          createdBy: createdBy
+          sourceConnectionTypeId: sourceConnectionTypeId
+          destinationConnectionTypeId: destinationConnectionTypeId
+          destinationConnectionRequired: true
+          lastModifiedBy: lastModifiedBy
+          name: name
+          profiles:
+          - actorType: actorType
+            profileId: profileId
+            name: name
+            description: description
+            jobTypeId: jobTypeId
+          - actorType: actorType
+            profileId: profileId
+            name: name
+            description: description
+            jobTypeId: jobTypeId
+          createdDateTime: createdDateTime
+          jobTypeId: jobTypeId
+        - lastModifiedDateTime: lastModifiedDateTime
+          sourceConnectionRequired: true
+          createdBy: createdBy
+          sourceConnectionTypeId: sourceConnectionTypeId
+          destinationConnectionTypeId: destinationConnectionTypeId
+          destinationConnectionRequired: true
+          lastModifiedBy: lastModifiedBy
+          name: name
+          profiles:
+          - actorType: actorType
+            profileId: profileId
+            name: name
+            description: description
+            jobTypeId: jobTypeId
+          - actorType: actorType
+            profileId: profileId
+            name: name
+            description: description
+            jobTypeId: jobTypeId
+          createdDateTime: createdDateTime
+          jobTypeId: jobTypeId
+        pageIndex: 0
+        count: 1
+        pageSize: 6
+      properties:
+        pageIndex:
+          format: int32
+          type: integer
+        pageSize:
+          format: int32
+          type: integer
+        count:
+          format: int64
+          type: integer
+        data:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.JobType.V1.JobTypeListResponse'
+          nullable: true
+          type: array
+      type: object
+    DataSyncApi.JobType.V1.JobTypeProfileResponse:
+      additionalProperties: false
+      example:
+        lastModifiedDateTime: lastModifiedDateTime
+        lastModifiedBy: lastModifiedBy
+        profiles:
+        - actorType: actorType
+          profileId: profileId
+          name: name
+          description: description
+          jobTypeId: jobTypeId
+        - actorType: actorType
+          profileId: profileId
+          name: name
+          description: description
+          jobTypeId: jobTypeId
+        description: description
+        createdDateTime: createdDateTime
+        hasChildJobs: true
+        jobMetadataFields:
+        - isSecret: true
+          code: code
+          tab: tab
+          defaultValue: defaultValue
+          display: true
+          values: values
+          label: label
+          api: api
+          type: type
+          validation: validation
+          order: order
+        - isSecret: true
+          code: code
+          tab: tab
+          defaultValue: defaultValue
+          display: true
+          values: values
+          label: label
+          api: api
+          type: type
+          validation: validation
+          order: order
+        jobPoints: 0
+        sourceConnectionRequired: true
+        childJobField: childJobField
+        createdBy: createdBy
+        sourceConnectionTypeId: sourceConnectionTypeId
+        destinationConnectionTypeId: destinationConnectionTypeId
+        destinationConnectionRequired: true
+        name: name
+        jobTypeId: jobTypeId
+      properties:
+        jobTypeId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+        jobPoints:
+          format: int32
+          type: integer
+        hasChildJobs:
+          type: boolean
+        childJobField:
+          nullable: true
+          type: string
+        sourceConnectionTypeId:
+          nullable: true
+          type: string
+        destinationConnectionTypeId:
+          nullable: true
+          type: string
+        sourceConnectionRequired:
+          type: boolean
+        destinationConnectionRequired:
+          type: boolean
+        jobMetadataFields:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.JobType.V1.JobMetadataField'
+          nullable: true
+          readOnly: true
+          type: array
+        profiles:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.JobType.V1.Profile'
+          nullable: true
+          readOnly: true
+          type: array
+        createdBy:
+          nullable: true
+          type: string
+        createdDateTime:
+          nullable: true
+          type: string
+        lastModifiedBy:
+          nullable: true
+          type: string
+        lastModifiedDateTime:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.JobType.V1.Profile:
+      additionalProperties: false
+      example:
+        actorType: actorType
+        profileId: profileId
+        name: name
+        description: description
+        jobTypeId: jobTypeId
+      properties:
+        jobTypeId:
+          nullable: true
+          type: string
+        profileId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+        actorType:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Provider.V1.ConnectionMetadataField:
+      additionalProperties: false
+      example:
+        isSecret: true
+        code: code
+        tab: tab
+        defaultValue: defaultValue
+        display: true
+        values: values
+        label: label
+        api: api
+        type: type
+        validation: validation
+        order: order
+      properties:
+        tab:
+          nullable: true
+          type: string
+        code:
+          nullable: true
+          type: string
+        label:
+          nullable: true
+          type: string
+        validation:
+          nullable: true
+          type: string
+        order:
+          nullable: true
+          type: string
+        display:
+          type: boolean
+        defaultValue:
+          nullable: true
+          type: string
+        type:
+          nullable: true
+          type: string
+        values:
+          nullable: true
+          type: string
+        api:
+          nullable: true
+          type: string
+        isSecret:
+          type: boolean
+      type: object
+    DataSyncApi.Provider.V1.ConnectionType:
+      additionalProperties: false
+      example:
+        providerId: providerId
+        documentationUri: documentationUri
+        connectionMetadataFields:
+        - isSecret: true
+          code: code
+          tab: tab
+          defaultValue: defaultValue
+          display: true
+          values: values
+          label: label
+          api: api
+          type: type
+          validation: validation
+          order: order
+        - isSecret: true
+          code: code
+          tab: tab
+          defaultValue: defaultValue
+          display: true
+          values: values
+          label: label
+          api: api
+          type: type
+          validation: validation
+          order: order
+        name: name
+        description: description
+        connectionTypeId: connectionTypeId
+      properties:
+        providerId:
+          nullable: true
+          type: string
+        connectionTypeId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+        documentationUri:
+          nullable: true
+          type: string
+        connectionMetadataFields:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Provider.V1.ConnectionMetadataField'
+          nullable: true
+          readOnly: true
+          type: array
+      type: object
+    DataSyncApi.Provider.V1.ProviderListResponse:
+      additionalProperties: false
+      example:
+        lastModifiedDateTime: lastModifiedDateTime
+        createdBy: createdBy
+        providerId: providerId
+        lastModifiedBy: lastModifiedBy
+        name: name
+        description: description
+        createdDateTime: createdDateTime
+        connectionTypes:
+        - providerId: providerId
+          documentationUri: documentationUri
+          connectionMetadataFields:
+          - isSecret: true
+            code: code
+            tab: tab
+            defaultValue: defaultValue
+            display: true
+            values: values
+            label: label
+            api: api
+            type: type
+            validation: validation
+            order: order
+          - isSecret: true
+            code: code
+            tab: tab
+            defaultValue: defaultValue
+            display: true
+            values: values
+            label: label
+            api: api
+            type: type
+            validation: validation
+            order: order
+          name: name
+          description: description
+          connectionTypeId: connectionTypeId
+        - providerId: providerId
+          documentationUri: documentationUri
+          connectionMetadataFields:
+          - isSecret: true
+            code: code
+            tab: tab
+            defaultValue: defaultValue
+            display: true
+            values: values
+            label: label
+            api: api
+            type: type
+            validation: validation
+            order: order
+          - isSecret: true
+            code: code
+            tab: tab
+            defaultValue: defaultValue
+            display: true
+            values: values
+            label: label
+            api: api
+            type: type
+            validation: validation
+            order: order
+          name: name
+          description: description
+          connectionTypeId: connectionTypeId
+        iconUri: iconUri
+      properties:
+        providerId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+        iconUri:
+          nullable: true
+          type: string
+        connectionTypes:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Provider.V1.ConnectionType'
+          nullable: true
+          readOnly: true
+          type: array
+        createdBy:
+          nullable: true
+          type: string
+        createdDateTime:
+          nullable: true
+          type: string
+        lastModifiedBy:
+          nullable: true
+          type: string
+        lastModifiedDateTime:
+          nullable: true
+          type: string
+      type: object
+    DataSyncApi.Provider.V1.ProviderListResponsePaginatedItemsViewModel:
+      additionalProperties: false
+      example:
+        data:
+        - lastModifiedDateTime: lastModifiedDateTime
+          createdBy: createdBy
+          providerId: providerId
+          lastModifiedBy: lastModifiedBy
+          name: name
+          description: description
+          createdDateTime: createdDateTime
+          connectionTypes:
+          - providerId: providerId
+            documentationUri: documentationUri
+            connectionMetadataFields:
+            - isSecret: true
+              code: code
+              tab: tab
+              defaultValue: defaultValue
+              display: true
+              values: values
+              label: label
+              api: api
+              type: type
+              validation: validation
+              order: order
+            - isSecret: true
+              code: code
+              tab: tab
+              defaultValue: defaultValue
+              display: true
+              values: values
+              label: label
+              api: api
+              type: type
+              validation: validation
+              order: order
+            name: name
+            description: description
+            connectionTypeId: connectionTypeId
+          - providerId: providerId
+            documentationUri: documentationUri
+            connectionMetadataFields:
+            - isSecret: true
+              code: code
+              tab: tab
+              defaultValue: defaultValue
+              display: true
+              values: values
+              label: label
+              api: api
+              type: type
+              validation: validation
+              order: order
+            - isSecret: true
+              code: code
+              tab: tab
+              defaultValue: defaultValue
+              display: true
+              values: values
+              label: label
+              api: api
+              type: type
+              validation: validation
+              order: order
+            name: name
+            description: description
+            connectionTypeId: connectionTypeId
+          iconUri: iconUri
+        - lastModifiedDateTime: lastModifiedDateTime
+          createdBy: createdBy
+          providerId: providerId
+          lastModifiedBy: lastModifiedBy
+          name: name
+          description: description
+          createdDateTime: createdDateTime
+          connectionTypes:
+          - providerId: providerId
+            documentationUri: documentationUri
+            connectionMetadataFields:
+            - isSecret: true
+              code: code
+              tab: tab
+              defaultValue: defaultValue
+              display: true
+              values: values
+              label: label
+              api: api
+              type: type
+              validation: validation
+              order: order
+            - isSecret: true
+              code: code
+              tab: tab
+              defaultValue: defaultValue
+              display: true
+              values: values
+              label: label
+              api: api
+              type: type
+              validation: validation
+              order: order
+            name: name
+            description: description
+            connectionTypeId: connectionTypeId
+          - providerId: providerId
+            documentationUri: documentationUri
+            connectionMetadataFields:
+            - isSecret: true
+              code: code
+              tab: tab
+              defaultValue: defaultValue
+              display: true
+              values: values
+              label: label
+              api: api
+              type: type
+              validation: validation
+              order: order
+            - isSecret: true
+              code: code
+              tab: tab
+              defaultValue: defaultValue
+              display: true
+              values: values
+              label: label
+              api: api
+              type: type
+              validation: validation
+              order: order
+            name: name
+            description: description
+            connectionTypeId: connectionTypeId
+          iconUri: iconUri
+        pageIndex: 0
+        count: 1
+        pageSize: 6
+      properties:
+        pageIndex:
+          format: int32
+          type: integer
+        pageSize:
+          format: int32
+          type: integer
+        count:
+          format: int64
+          type: integer
+        data:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Provider.V1.ProviderListResponse'
+          nullable: true
+          type: array
+      type: object
+    DataSyncApi.Provider.V1.ProviderProfileResponse:
+      additionalProperties: false
+      example:
+        lastModifiedDateTime: lastModifiedDateTime
+        createdBy: createdBy
+        providerId: providerId
+        lastModifiedBy: lastModifiedBy
+        name: name
+        description: description
+        createdDateTime: createdDateTime
+        connectionTypes:
+        - providerId: providerId
+          documentationUri: documentationUri
+          connectionMetadataFields:
+          - isSecret: true
+            code: code
+            tab: tab
+            defaultValue: defaultValue
+            display: true
+            values: values
+            label: label
+            api: api
+            type: type
+            validation: validation
+            order: order
+          - isSecret: true
+            code: code
+            tab: tab
+            defaultValue: defaultValue
+            display: true
+            values: values
+            label: label
+            api: api
+            type: type
+            validation: validation
+            order: order
+          name: name
+          description: description
+          connectionTypeId: connectionTypeId
+        - providerId: providerId
+          documentationUri: documentationUri
+          connectionMetadataFields:
+          - isSecret: true
+            code: code
+            tab: tab
+            defaultValue: defaultValue
+            display: true
+            values: values
+            label: label
+            api: api
+            type: type
+            validation: validation
+            order: order
+          - isSecret: true
+            code: code
+            tab: tab
+            defaultValue: defaultValue
+            display: true
+            values: values
+            label: label
+            api: api
+            type: type
+            validation: validation
+            order: order
+          name: name
+          description: description
+          connectionTypeId: connectionTypeId
+        iconUri: iconUri
+      properties:
+        providerId:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+        iconUri:
+          nullable: true
+          type: string
+        connectionTypes:
+          items:
+            $ref: '#/components/schemas/DataSyncApi.Provider.V1.ConnectionType'
+          nullable: true
+          readOnly: true
+          type: array
+        createdBy:
+          nullable: true
+          type: string
+        createdDateTime:
+          nullable: true
+          type: string
+        lastModifiedBy:
+          nullable: true
+          type: string
+        lastModifiedDateTime:
+          nullable: true
+          type: string
+      type: object
+    EdGraph.Platform.HttpAggregators.Tenant.Api.Controllers.v1.ViewModels.Responses.ConnectionEdFiResponse:
+      additionalProperties: false
+      example:
+        isSelected: true
+        label: label
+        value: value
+      properties:
+        value:
+          nullable: true
+          type: string
+        label:
+          nullable: true
+          type: string
+        isSelected:
+          type: boolean
+      type: object
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      additionalProperties: {}
+      properties:
+        type:
+          nullable: true
+          type: string
+        title:
+          nullable: true
+          type: string
+        status:
+          format: int32
+          nullable: true
+          type: integer
+        detail:
+          nullable: true
+          type: string
+        instance:
+          nullable: true
+          type: string
+      type: object
+  securitySchemes:
+    oauth2:
+      description: Use bearer token generated from an OpenId server
+      flows:
+        clientCredentials:
+          scopes:
+            https://api.edgraph.com/tenant: EdGraph Platform - Tenant Api
+          tokenUrl: https://login.edgraph.dev/connect/token
+      type: oauth2
+

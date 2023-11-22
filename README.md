@@ -1,1 +1,1 @@
-# EdGraph-Datasync-SDKs
+# Data Sync SDK
